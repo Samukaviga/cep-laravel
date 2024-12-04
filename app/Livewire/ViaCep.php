@@ -89,4 +89,28 @@ class ViaCep extends Component
 
         $this->resetExcept('anddresses'); //limpa todos os campos
     }
+
+    public function edit($id) 
+    {
+        dd($id);
+
+        $this->anddresses = Anddress::find($id);
+
+    }
+
+    public function remove($id)
+    {
+
+        $anddress = Anddress::find($id);
+       
+        $anddress->delete();
+
+        $this->render();
+    } 
+    
+
+       
+
+
+    
 }

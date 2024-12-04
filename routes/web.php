@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Livewire\ViaCep;
+use App\Livewire\ViaCepEdit;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,5 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('cep', [ViaCep::class, 'cep']);
+
+Route::get('cep/editar/{id}', [ViaCepEdit::class , 'cepEdit']);
 
 require __DIR__.'/auth.php';

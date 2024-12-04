@@ -1,6 +1,6 @@
 <div class="m-4 p-5  mb-4">
 
-    <h5 class="text-center ">Endereço</h5>
+    <h5 class="text-center ">Editar Endereço</h5>
     <form class="container mx-auto">
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label text-secondary">Cep</label>
@@ -55,41 +55,5 @@
         <button type="button" wire:click="save" class="btn btn-primary">Salvar</button>
 
     </form>
-
-
-    <div class="container mt-4">
-
-        <h6>Anddress</h6>
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Cep</th>
-                    <th scope="col">Logradouro</th>
-                    <th scope="col">Localidade</th>
-                    <th scope="col">UF</th>
-                    <th scope="col">Bairro</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($anddresses as $anddress)
-                <tr>
-                    <th scope="row">{{ $anddress['cep'] }}</th>
-                    <td>{{ $anddress['logradouro'] }}</td>
-                    <td>{{ $anddress['cidade'] }}</td>
-                    <td>{{ $anddress['uf'] }}</td>
-                    <td>{{ $anddress['bairro'] }}</td>
-                    <td>
-                        <a href="/cep/editar/{{$anddress['id']}}" class="btn btn-primary">Editar</a>
-                        <button type="button" wire:click="remove({{ $anddress['id'] }})" class="btn btn-danger">Deletar</button>
-                    </td>
-                </tr>
-                @endforeach
-            
-              
-            </tbody>
-        </table>
-    </div>
 
 </div>
